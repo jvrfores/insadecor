@@ -140,11 +140,14 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 100px;
+      align-self: flex-start;
     }
 
     .inicio-imagen img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
     }
 
@@ -175,7 +178,7 @@
 
     .galeria {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       grid-auto-rows: 200px;
       gap: 15px;
     }
@@ -199,29 +202,24 @@
       transform: scale(1.05);
     }
 
-    .galeria-item:nth-child(1) {
+    .galeria-item:nth-child(5n+1) {
       grid-column: span 2;
       grid-row: span 2;
     }
 
-    .galeria-item:nth-child(4) {
-      grid-column: span 2;
+    .galeria-item:nth-child(5n+2) {
+      grid-column: span 1;
+      grid-row: span 1;
     }
 
-    .galeria-item:nth-child(7) {
-      grid-column: span 2;
+    .galeria-item:nth-child(5n+3) {
+      grid-column: span 1;
+      grid-row: span 1;
     }
 
-    .galeria-item:nth-child(10) {
+    .galeria-item:nth-child(5n+4) {
       grid-column: span 2;
-    }
-
-    .galeria-item:nth-child(13) {
-      grid-column: span 2;
-    }
-
-    .galeria-item:nth-child(16) {
-      grid-column: span 2;
+      grid-row: span 1;
     }
 
     .modal {
@@ -412,12 +410,21 @@
       color: var(--marron);
     }
 
+    .info-fiscal {
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--beige-medio);
+      border-radius: 8px;
+      font-size: 0.9em;
+    }
+
     @media (max-width: 768px) {
       .galeria {
         grid-template-columns: repeat(2, 1fr);
       }
       
-      .galeria-item:nth-child(1) {
+      .galeria-item:nth-child(5n+1) {
         grid-column: span 2;
         grid-row: span 1;
       }
@@ -429,6 +436,7 @@
       .inicio-imagen {
         flex: 0 0 300px;
         width: 100%;
+        position: static;
       }
     }
   </style>
@@ -475,6 +483,10 @@
             <h3>Compromiso de Plazos</h3>
             <p>Respetamos los tiempos acordados sin comprometer la calidad.</p>
           </div>
+          <div class="servicio-card">
+            <h3>Sostenibilidad y Medio Ambiente</h3>
+            <p>Utilizamos materiales ecológicos y técnicas de eficiencia energética.</p>
+          </div>
         </div>
         
         <div style="margin-top: 40px;">
@@ -498,6 +510,9 @@
         <p>📍 Castellón de la Plana, España</p>
         <p>⏰ Horario: Lunes a Viernes de 9:00 a 18:00</p>
         <p>💬 Presupuesto sin compromiso en 24-48h</p>
+        <div class="info-fiscal">
+          <p><strong>Todos nuestros presupuestos incluyen Factura e IVA 21%</strong></p>
+        </div>
       </div>
     </div>
   </section>
@@ -514,9 +529,13 @@
         <p>Su filosofía se basa en entender las necesidades específicas de cada cliente, creando espacios que no solo son visualmente atractivos, sino que también mejoran la calidad de vida de quienes los habitan. Gemma y su equipo trabajan estrechamente con cada cliente, desde la concepción inicial del proyecto hasta su finalización, asegurando que cada detalle refleje la personalidad y necesidades del propietario.</p>
         
         <p>DECORINSA se caracteriza por su atención personalizada, su compromiso con los plazos acordados y su transparencia en todos los aspectos del proyecto. Trabajamos con proveedores locales siempre que es posible, apoyando la economía de nuestra comunidad y reduciendo nuestra huella de carbono.</p>
+        
+        <div class="info-fiscal">
+          <p><strong>Todos nuestros trabajos incluyen Factura e IVA 21%</strong></p>
+        </div>
       </div>
       <div class="sobre-foto">
-        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Gemma Insa Latorre - Directora de DECORINSA">
+        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80" alt="Gemma Insa Latorre - Directora de DECORINSA">
         <p><strong>Gemma Insa Latorre</strong><br>Directora y Diseñadora Principal</p>
       </div>
     </div>
@@ -573,6 +592,18 @@
       </div>
       <div class="galeria-item">
         <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Baño con acabados de lujo">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Cocina moderna minimalista">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Baño con diseño escandinavo">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Cocina rústica moderna">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1600607687559-d2d524c6c0e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Baño con ducha panorámica">
       </div>
     </div>
   </section>
@@ -642,6 +673,10 @@
         
         <div class="detalle-presupuesto" id="detalle-presupuesto">
           <!-- Se llenará dinámicamente con JavaScript -->
+        </div>
+        
+        <div class="info-fiscal">
+          <p><strong>Todos los presupuestos incluyen Factura e IVA 21%</strong></p>
         </div>
         
         <a href="#" class="boton-contacto">Solicitar Presupuesto Detallado</a>
