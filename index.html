@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="DECORINSA - Diseño de interiores y reformas integrales en Castellón. Reformamos tu hogar con estilo, calidad y cercanía. Bilingüe español / català." />
+  <meta name="keywords" content="DECORINSA, diseño de interiores, reformas Castellón, Gemma Insa Latorre, interiorismo, decoración" />
+  <title>DECORINSA | Diseño y Reformas en Castellón</title>
+  <style>
+    :root {
+      --beige-claro: #faf8f5;
+      --beige-medio: #d9cbb8;
+      --beige-oscuro: #bfa890;
+      --verde-oliva: #8a9b6e;
+      --marron: #a67856;
+      --texto-oscuro: #333;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      background-color: var(--beige-claro);
+      color: var(--texto-oscuro);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--beige-oscuro), var(--beige-medio));
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    header h2 {
+      font-size: 1.3em;
+      font-weight: 300;
+      margin-top: 8px;
+      color: #fefefe;
+    }
+
+    nav {
+      background-color: white;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: var(--texto-oscuro);
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--marron);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--marron);
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2em;
+    }
+
+    .sobre-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sobre-texto {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .sobre-foto {
+      flex: 0 0 300px;
+      text-align: center;
+    }
+
+    .sobre-foto img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.03);
+    }
+
+    .calculadora-presupuesto {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .opciones-presupuesto {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .opcion {
+      background-color: var(--beige-claro);
+      border: 1px solid var(--beige-medio);
+      border-radius: 8px;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .opcion:hover {
+      background-color: var(--beige-medio);
+    }
+
+    .opcion.seleccionada {
+      background-color: var(--verde-oliva);
+      color: white;
+      border-color: var(--verde-oliva);
+    }
+
+    .resultado-presupuesto {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--beige-claro);
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .resultado-presupuesto h3 {
+      margin-top: 0;
+      color: var(--marron);
+    }
+
+    .total-presupuesto {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--verde-oliva);
+      margin: 10px 0;
+    }
+
+    .detalle-presupuesto {
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    .detalle-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--beige-medio);
+    }
+
+    .contacto-info {
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    .contacto-info p {
+      margin: 15px 0;
+    }
+
+    footer {
+      background-color: var(--marron);
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .bilingue {
+      font-size: 0.9em;
+      color: #eee;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DECORINSA</h1>
+    <h2>Diseño de interiores y reformas integrales en Castellón</h2>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre Nosotros</a>
+    <a href="#galeria">Galería</a>
+    <a href="#presupuestos">Presupuestos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Sobre Nosotros</h2>
+    <div class="sobre-container">
+      <div class="sobre-texto">
+        <p>En <strong>DECORINSA</strong>, liderado por <b>Gemma Insa Latorre</b>, transformamos viviendas antiguas en espacios modernos, luminosos y funcionales. Nos especializamos en reformas integrales, combinando diseño y eficiencia con materiales de alta calidad.</p>
+        
+        <p><strong>Gemma Insa Latorre</strong>, con más de 15 años de experiencia en el sector del diseño de interiores, ha desarrollado un enfoque único que combina funcionalidad, estética y sostenibilidad. Graduada en Diseño de Interiores por la Escola d'Art i Superior de Disseny de Castelló, Gemma ha completado su formación con especializaciones en eficiencia energética aplicada a la vivienda y materiales ecológicos.</p>
+        
+        <p>Su filosofía se basa en entender las necesidades específicas de cada cliente, creando espacios que no solo son visualmente atractivos, sino que también mejoran la calidad de vida de quienes los habitan. Gemma y su equipo trabajan estrechamente con cada cliente, desde la concepción inicial del proyecto hasta su finalización, asegurando que cada detalle refleje la personalidad y necesidades del propietario.</p>
+        
+        <p>DECORINSA se caracteriza por su atención personalizada, su compromiso con los plazos acordados y su transparencia en todos los aspectos del proyecto. Trabajamos con proveedores locales siempre que es posible, apoyando la economía de nuestra comunidad y reduciendo nuestra huella de carbono.</p>
+      </div>
+      <div class="sobre-foto">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gemma Insa Latorre - Directora de DECORINSA">
+        <p><strong>Gemma Insa Latorre</strong><br>Directora y Diseñadora Principal</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería de Proyectos</h2>
+    <div class="galeria">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cocina moderna con isla central">
+      <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Salón reformado con luz natural">
+      <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dormitorio principal con vestidor integrado">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Baño minimalista con ducha de obra">
+      <img src="https://images.unsplash.com/photo-1600607688964-a5cbfa6f5c9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Terraza exterior reformada">
+      <img src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Comedor con muebles a medida">
+      <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Oficina en el hogar">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cuarto de baño con bañera independiente">
+      <img src="https://images.unsplash.com/photo-1600566752734-45b8f0b6b6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cocina abierta al salón">
+      <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dormitorio juvenil con espacio de estudio">
+    </div>
+  </section>
+
+  <section id="presupuestos">
+    <h2>Calculadora de Presupuestos</h2>
+    <div class="calculadora-presupuesto">
+      <p>Selecciona las estancias que deseas reformar para obtener un presupuesto estimado:</p>
+      
+      <div class="opciones-presupuesto">
+        <div class="opcion" data-estancia="cocina" data-precio="4000">
+          <h3>Cocina</h3>
+          <p>Desde 4.000 €</p>
+        </div>
+        <div class="opcion" data-estancia="baño" data-precio="3000">
+          <h3>Baño</h3>
+          <p>Desde 3.000 €</p>
+        </div>
+        <div class="opcion" data-estancia="salon" data-precio="2500">
+          <h3>Salón</h3>
+          <p>Desde 2.500 €</p>
+        </div>
+        <div class="opcion" data-estancia="dormitorio" data-precio="1800">
+          <h3>Dormitorio</h3>
+          <p>Desde 1.800 €</p>
+        </div>
+        <div class="opcion" data-estancia="vivienda" data-precio="18000">
+          <h3>Vivienda completa</h3>
+          <p>Desde 18.000 €</p>
+        </div>
+      </div>
+      
+      <div class="resultado-presupuesto" id="resultado-presupuesto" style="display: none;">
+        <h3>Tu presupuesto estimado</h3>
+        <div class="total-presupuesto" id="total-presupuesto">0 €</div>
+        <p>Este es un presupuesto orientativo. Contacta con nosotros para obtener una valoración personalizada.</p>
+        
+        <div class="detalle-presupuesto" id="detalle-presupuesto">
+          <!-- Se llenará dinámicamente con JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="contacto-info">
+      <p>📞 <strong>685 646 384</strong></p>
+      <p>✉️ <a href="mailto:insagemma@gmail.com">insagemma@gmail.com</a></p>
+      <p>📍 Castellón de la Plana, España</p>
+      <p>⏰ Horario: Lunes a Viernes de 9:00 a 18:00</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 DECORINSA — Diseño y reformas por Gemma Insa Latorre</p>
+    <p class="bilingue">Disponible en Español / Català</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const opciones = document.querySelectorAll('.opcion');
+      const resultado = document.getElementById('resultado-presupuesto');
+      const totalElemento = document.getElementById('total-presupuesto');
+      const detalleElemento = document.getElementById('detalle-presupuesto');
+      
+      let seleccionadas = [];
+      
+      opciones.forEach(opcion => {
+        opcion.addEventListener('click', function() {
+          const estancia = this.getAttribute('data-estancia');
+          const precio = parseInt(this.getAttribute('data-precio'));
+          
+          // Si es vivienda completa, limpiar otras selecciones
+          if (estancia === 'vivienda') {
+            seleccionadas = [{estancia: 'vivienda', precio: precio}];
+            opciones.forEach(o => {
+              if (o.getAttribute('data-estancia') !== 'vivienda') {
+                o.classList.remove('seleccionada');
+              }
+            });
+          } else {
+            // Si se selecciona vivienda completa, quitar esa selección
+            seleccionadas = seleccionadas.filter(item => item.estancia !== 'vivienda');
+            opciones.forEach(o => {
+              if (o.getAttribute('data-estancia') === 'vivienda') {
+                o.classList.remove('seleccionada');
+              }
+            });
+            
+            // Alternar selección de la estancia actual
+            const index = seleccionadas.findIndex(item => item.estancia === estancia);
+            if (index === -1) {
+              seleccionadas.push({estancia, precio});
+            } else {
+              seleccionadas.splice(index, 1);
+            }
+          }
+          
+          // Actualizar clases visuales
+          this.classList.toggle('seleccionada');
+          
+          // Calcular y mostrar presupuesto
+          calcularPresupuesto();
+        });
+      });
+      
+      function calcularPresupuesto() {
+        if (seleccionadas.length === 0) {
+          resultado.style.display = 'none';
+          return;
+        }
+        
+        let total = 0;
+        let detalleHTML = '';
+        
+        seleccionadas.forEach(item => {
+          total += item.precio;
+          let nombreEstancia = '';
+          switch(item.estancia) {
+            case 'cocina': nombreEstancia = 'Cocina'; break;
+            case 'baño': nombreEstancia = 'Baño'; break;
+            case 'salon': nombreEstancia = 'Salón'; break;
+            case 'dormitorio': nombreEstancia = 'Dormitorio'; break;
+            case 'vivienda': nombreEstancia = 'Vivienda completa'; break;
+          }
+          detalleHTML += `<div class="detalle-item"><span>${nombreEstancia}</span><span>${item.precio} €</span></div>`;
+        });
+        
+        totalElemento.textContent = total.toLocaleString('es-ES') + ' €';
+        detalleElemento.innerHTML = detalleHTML;
+        resultado.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
