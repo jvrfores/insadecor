@@ -123,31 +123,30 @@
       font-size: 2em;
     }
 
+    /* INICIO CON BARRA LATERAL FIJA */
     .inicio-container {
       display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: flex-start;
+      min-height: 80vh;
     }
 
     .inicio-texto {
       flex: 1;
-      min-width: 300px;
+      padding-right: 40px;
     }
 
     .inicio-imagen {
-      flex: 0 0 400px;
+      flex: 0 0 40%;
+      position: sticky;
+      top: 0;
+      height: 100vh;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 100px;
-      align-self: flex-start;
     }
 
     .inicio-imagen img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
     }
 
@@ -176,6 +175,7 @@
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
 
+    /* GALERÍA PERFECTA SIN HUECOS */
     .galeria {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -202,24 +202,10 @@
       transform: scale(1.05);
     }
 
+    /* Asegurar que no hay huecos en la galería */
     .galeria-item:nth-child(5n+1) {
       grid-column: span 2;
       grid-row: span 2;
-    }
-
-    .galeria-item:nth-child(5n+2) {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
-
-    .galeria-item:nth-child(5n+3) {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
-
-    .galeria-item:nth-child(5n+4) {
-      grid-column: span 2;
-      grid-row: span 1;
     }
 
     .modal {
@@ -256,93 +242,204 @@
       cursor: pointer;
     }
 
+    /* ESTILOS MEJORADOS PARA PRESUPUESTOS */
     .calculadora-presupuesto {
       background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 30px;
-      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      padding: 40px;
+      max-width: 1000px;
       margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .calculadora-presupuesto::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(to right, var(--verde-oliva), var(--marron));
+    }
+
+    .presupuesto-intro {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1em;
     }
 
     .opciones-presupuesto {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
       margin-bottom: 30px;
     }
 
     .opcion {
       background-color: var(--beige-claro);
-      border: 1px solid var(--beige-medio);
-      border-radius: 8px;
-      padding: 15px;
+      border: 2px solid var(--beige-medio);
+      border-radius: 12px;
+      padding: 20px;
       cursor: pointer;
       transition: all 0.3s;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
     .opcion:hover {
-      background-color: var(--beige-medio);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-color: var(--verde-oliva);
     }
 
     .opcion.seleccionada {
       background-color: var(--verde-oliva);
       color: white;
       border-color: var(--verde-oliva);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .opcion-icono {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .opcion h3 {
+      margin: 10px 0;
+      font-size: 1.3em;
+    }
+
+    .opcion .precio {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .opcion .detalles {
+      font-size: 0.9em;
+      margin-top: 10px;
+      opacity: 0.8;
     }
 
     .calidad-selector {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
+      gap: 15px;
+      margin: 30px 0;
+      flex-wrap: wrap;
     }
 
     .calidad-btn {
-      padding: 10px 20px;
+      padding: 12px 25px;
       background-color: var(--beige-medio);
-      border: none;
-      border-radius: 5px;
+      border: 2px solid var(--beige-medio);
+      border-radius: 30px;
       cursor: pointer;
       transition: all 0.3s;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .calidad-btn:hover {
+      background-color: var(--beige-oscuro);
+      border-color: var(--beige-oscuro);
     }
 
     .calidad-btn.activo {
       background-color: var(--verde-oliva);
       color: white;
+      border-color: var(--verde-oliva);
+    }
+
+    .calidad-icono {
+      font-size: 1.2em;
     }
 
     .resultado-presupuesto {
       text-align: center;
-      padding: 20px;
-      background-color: var(--beige-claro);
-      border-radius: 8px;
-      margin-top: 20px;
+      padding: 30px;
+      background: linear-gradient(135deg, var(--beige-claro) 0%, #f5f1eb 100%);
+      border-radius: 12px;
+      margin-top: 30px;
+      border: 2px dashed var(--beige-medio);
+      display: none;
     }
 
     .resultado-presupuesto h3 {
       margin-top: 0;
       color: var(--marron);
+      font-size: 1.8em;
     }
 
     .total-presupuesto {
-      font-size: 2em;
+      font-size: 2.5em;
       font-weight: bold;
       color: var(--verde-oliva);
-      margin: 10px 0;
+      margin: 15px 0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
     }
 
     .detalle-presupuesto {
       text-align: left;
-      margin-top: 15px;
+      margin-top: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
 
     .detalle-item {
       display: flex;
       justify-content: space-between;
-      padding: 5px 0;
+      padding: 8px 0;
       border-bottom: 1px solid var(--beige-medio);
+    }
+
+    .detalle-item:last-child {
+      border-bottom: none;
+    }
+
+    .facilidades-pago {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .facilidad {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--verde-oliva);
+    }
+
+    .facilidad-icono {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: var(--verde-oliva);
+    }
+
+    .facilidad h4 {
+      margin: 10px 0;
+      color: var(--marron);
+    }
+
+    .info-fiscal {
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--beige-medio);
+      border-radius: 8px;
+      font-size: 0.9em;
     }
 
     .contacto-info {
@@ -379,16 +476,22 @@
       display: inline-block;
       background-color: var(--verde-oliva);
       color: white;
-      padding: 12px 25px;
-      border-radius: 5px;
+      padding: 15px 30px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
       margin-top: 20px;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: none;
+      cursor: pointer;
+      font-size: 1.1em;
     }
 
     .boton-contacto:hover {
       background-color: var(--marron);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
     .servicios-grid {
@@ -410,13 +513,13 @@
       color: var(--marron);
     }
 
-    .info-fiscal {
+    .presupuesto-extra {
+      margin-top: 40px;
       text-align: center;
-      margin-top: 20px;
-      padding: 15px;
-      background-color: var(--beige-medio);
-      border-radius: 8px;
-      font-size: 0.9em;
+      padding: 30px;
+      background: linear-gradient(135deg, #f9f7f4 0%, #f0ebe4 100%);
+      border-radius: 15px;
+      border: 2px solid var(--beige-medio);
     }
 
     @media (max-width: 768px) {
@@ -437,6 +540,15 @@
         flex: 0 0 300px;
         width: 100%;
         position: static;
+        height: 300px;
+      }
+      
+      .opciones-presupuesto {
+        grid-template-columns: 1fr;
+      }
+      
+      .facilidades-pago {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -510,9 +622,6 @@
         <p>📍 Castellón de la Plana, España</p>
         <p>⏰ Horario: Lunes a Viernes de 9:00 a 18:00</p>
         <p>💬 Presupuesto sin compromiso en 24-48h</p>
-        <div class="info-fiscal">
-          <p><strong>Todos nuestros presupuestos incluyen Factura e IVA 21%</strong></p>
-        </div>
       </div>
     </div>
   </section>
@@ -529,19 +638,15 @@
         <p>Su filosofía se basa en entender las necesidades específicas de cada cliente, creando espacios que no solo son visualmente atractivos, sino que también mejoran la calidad de vida de quienes los habitan. Gemma y su equipo trabajan estrechamente con cada cliente, desde la concepción inicial del proyecto hasta su finalización, asegurando que cada detalle refleje la personalidad y necesidades del propietario.</p>
         
         <p>DECORINSA se caracteriza por su atención personalizada, su compromiso con los plazos acordados y su transparencia en todos los aspectos del proyecto. Trabajamos con proveedores locales siempre que es posible, apoyando la economía de nuestra comunidad y reduciendo nuestra huella de carbono.</p>
-        
-        <div class="info-fiscal">
-          <p><strong>Todos nuestros trabajos incluyen Factura e IVA 21%</strong></p>
-        </div>
       </div>
       <div class="sobre-foto">
-        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1167&q=80" alt="Gemma Insa Latorre - Directora de DECORINSA">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Gemma Insa Latorre - Directora de DECORINSA">
         <p><strong>Gemma Insa Latorre</strong><br>Directora y Diseñadora Principal</p>
       </div>
     </div>
   </section>
 
-  <!-- Página Galería -->
+  <!-- Página Galería - CORREGIDA SIN HUECOS -->
   <section id="galeria" class="pagina">
     <h2>Galería de Proyectos</h2>
     <div class="galeria">
@@ -616,71 +721,137 @@
     </div>
   </div>
 
-  <!-- Página Presupuestos -->
+  <!-- Página Presupuestos - MEJORADA -->
   <section id="presupuestos" class="pagina">
     <h2>Calculadora de Presupuestos</h2>
+    
     <div class="calculadora-presupuesto">
-      <p>Selecciona las estancias que deseas reformar para obtener un presupuesto estimado:</p>
+      <div class="presupuesto-intro">
+        <p>Calcula fácilmente el coste de tu reforma. Selecciona las estancias que quieres renovar y elige la calidad de materiales. ¡Obtén un presupuesto estimado al instante!</p>
+      </div>
       
       <div class="calidad-selector">
-        <button class="calidad-btn activo" data-calidad="economica">Económica</button>
-        <button class="calidad-btn" data-calidad="estandar">Estándar</button>
-        <button class="calidad-btn" data-calidad="premium">Premium</button>
+        <button class="calidad-btn activo" data-calidad="economica">
+          <span class="calidad-icono">💰</span> Económica
+        </button>
+        <button class="calidad-btn" data-calidad="estandar">
+          <span class="calidad-icono">⭐</span> Estándar
+        </button>
+        <button class="calidad-btn" data-calidad="premium">
+          <span class="calidad-icono">👑</span> Premium
+        </button>
       </div>
       
       <div class="opciones-presupuesto">
         <div class="opcion" data-estancia="cocina" data-precio-economica="4500" data-precio-estandar="7200" data-precio-premium="11500">
+          <span class="opcion-icono">🍳</span>
           <h3>Cocina</h3>
-          <p class="precio-economica">Desde 4.500 €</p>
-          <p class="precio-estandar" style="display:none">Desde 7.200 €</p>
-          <p class="precio-premium" style="display:none">Desde 11.500 €</p>
-          <p class="detalles">Mobiliario, encimera, electrodomésticos, iluminación</p>
+          <div class="precio precio-economica">Desde 4.500 €</div>
+          <div class="precio precio-estandar" style="display:none">Desde 7.200 €</div>
+          <div class="precio precio-premium" style="display:none">Desde 11.500 €</div>
+          <div class="detalles">Mobiliario, encimera, electrodomésticos, iluminación</div>
         </div>
         <div class="opcion" data-estancia="baño" data-precio-economica="3500" data-precio-estandar="5800" data-precio-premium="9200">
+          <span class="opcion-icono">🚿</span>
           <h3>Baño</h3>
-          <p class="precio-economica">Desde 3.500 €</p>
-          <p class="precio-estandar" style="display:none">Desde 5.800 €</p>
-          <p class="precio-premium" style="display:none">Desde 9.200 €</p>
-          <p class="detalles">Azulejos, sanitarios, mampara, grifería, iluminación</p>
+          <div class="precio precio-economica">Desde 3.500 €</div>
+          <div class="precio precio-estandar" style="display:none">Desde 5.800 €</div>
+          <div class="precio precio-premium" style="display:none">Desde 9.200 €</div>
+          <div class="detalles">Azulejos, sanitarios, mampara, grifería, iluminación</div>
         </div>
         <div class="opcion" data-estancia="salon" data-precio-economica="3200" data-precio-estandar="5500" data-precio-premium="8800">
+          <span class="opcion-icono">🛋️</span>
           <h3>Salón</h3>
-          <p class="precio-economica">Desde 3.200 €</p>
-          <p class="precio-estandar" style="display:none">Desde 5.500 €</p>
-          <p class="precio-premium" style="display:none">Desde 8.800 €</p>
-          <p class="detalles">Pintura, suelo, iluminación, carpintería, decoración</p>
+          <div class="precio precio-economica">Desde 3.200 €</div>
+          <div class="precio precio-estandar" style="display:none">Desde 5.500 €</div>
+          <div class="precio precio-premium" style="display:none">Desde 8.800 €</div>
+          <div class="detalles">Pintura, suelo, iluminación, carpintería, decoración</div>
         </div>
         <div class="opcion" data-estancia="dormitorio" data-precio-economica="2500" data-precio-estandar="4200" data-precio-premium="7500">
+          <span class="opcion-icono">🛏️</span>
           <h3>Dormitorio</h3>
-          <p class="precio-economica">Desde 2.500 €</p>
-          <p class="precio-estandar" style="display:none">Desde 4.200 €</p>
-          <p class="precio-premium" style="display:none">Desde 7.500 €</p>
-          <p class="detalles">Pintura, armarios empotrados, suelo, iluminación</p>
+          <div class="precio precio-economica">Desde 2.500 €</div>
+          <div class="precio precio-estandar" style="display:none">Desde 4.200 €</div>
+          <div class="precio precio-premium" style="display:none">Desde 7.500 €</div>
+          <div class="detalles">Pintura, armarios empotrados, suelo, iluminación</div>
         </div>
         <div class="opcion" data-estancia="vivienda" data-precio-economica="20000" data-precio-estandar="35000" data-precio-premium="55000">
+          <span class="opcion-icono">🏠</span>
           <h3>Vivienda completa</h3>
-          <p class="precio-economica">Desde 20.000 €</p>
-          <p class="precio-estandar" style="display:none">Desde 35.000 €</p>
-          <p class="precio-premium" style="display:none">Desde 55.000 €</p>
-          <p class="detalles">Reforma integral llaves en mano, 3-4 meses</p>
+          <div class="precio precio-economica">Desde 20.000 €</div>
+          <div class="precio precio-estandar" style="display:none">Desde 35.000 €</div>
+          <div class="precio precio-premium" style="display:none">Desde 55.000 €</div>
+          <div class="detalles">Reforma integral llaves en mano, 3-4 meses</div>
         </div>
       </div>
       
-      <div class="resultado-presupuesto" id="resultado-presupuesto" style="display: none;">
+      <div class="facilidades-pago">
+        <div class="facilidad">
+          <div class="facilidad-icono">📅</div>
+          <h4>Financiación Flexible</h4>
+          <p>Hasta 36 meses sin intereses</p>
+        </div>
+        <div class="facilidad">
+          <div class="facilidad-icono">💳</div>
+          <h4>Múltiples Formas de Pago</h4>
+          <p>Transferencia, tarjeta o efectivo</p>
+        </div>
+        <div class="facilidad">
+          <div class="facilidad-icono">🔧</div>
+          <h4>Garantía por Escrito</h4>
+          <p>2 años en materiales y mano de obra</p>
+        </div>
+        <div class="facilidad">
+          <div class="facilidad-icono">📝</div>
+          <h4>Contrato Detallado</h4>
+          <p>Sin sorpresas, todo por escrito</p>
+        </div>
+      </div>
+      
+      <div class="resultado-presupuesto" id="resultado-presupuesto">
         <h3>Tu presupuesto estimado</h3>
         <div class="total-presupuesto" id="total-presupuesto">0 €</div>
-        <p>Este es un presupuesto orientativo. Contacta con nosotros para obtener una valoración personalizada.</p>
+        <p>Este es un presupuesto orientativo. Contacta con nosotros para obtener una valoración personalizada sin compromiso.</p>
         
         <div class="detalle-presupuesto" id="detalle-presupuesto">
           <!-- Se llenará dinámicamente con JavaScript -->
         </div>
         
         <div class="info-fiscal">
-          <p><strong>Todos los presupuestos incluyen Factura e IVA 21%</strong></p>
+          <p><strong>✅ Todos los presupuestos incluyen Factura e IVA 21%</strong></p>
+          <p><strong>💳 Posibilidad de financiación hasta 36 meses</strong></p>
         </div>
         
-        <a href="#" class="boton-contacto">Solicitar Presupuesto Detallado</a>
+        <a href="#" class="boton-contacto">Solicitar Presupuesto Personalizado</a>
       </div>
+    </div>
+    
+    <div class="presupuesto-extra">
+      <h3>¿Necesitas un presupuesto más detallado?</h3>
+      <p>Contacta con nosotros para una valoración personalizada en tu domicilio. Incluye:</p>
+      <div class="facilidades-pago">
+        <div class="facilidad">
+          <div class="facilidad-icono">📏</div>
+          <h4>Medición en Casa</h4>
+          <p>Tomamos medidas exactas de tu espacio</p>
+        </div>
+        <div class="facilidad">
+          <div class="facilidad-icono">🎨</div>
+          <h4>Asesoramiento Personalizado</h4>
+          <p>Te ayudamos a elegir materiales y acabados</p>
+        </div>
+        <div class="facilidad">
+          <div class="facilidad-icono">📋</div>
+          <h4>Presupuesto Detallado</h4>
+          <p>Desglose completo por partidas</p>
+        </div>
+        <div class="facilidad">
+          <div class="facilidad-icono">⏱️</div>
+          <h4>Planificación de Plazos</h4>
+          <p>Calendarización realista de tu reforma</p>
+        </div>
+      </div>
+      <a href="#" class="boton-contacto">Solicitar Visita Sin Compromiso</a>
     </div>
   </section>
 
@@ -766,7 +937,7 @@
           
           // Actualizar precios visibles
           opciones.forEach(opcion => {
-            const precios = opcion.querySelectorAll('p[class^="precio-"]');
+            const precios = opcion.querySelectorAll('.precio');
             precios.forEach(precio => {
               precio.style.display = 'none';
             });
@@ -878,14 +1049,19 @@
       }
       
       // Botón de contacto en la página de inicio
-      const botonContacto = document.querySelector('.boton-contacto');
-      if (botonContacto) {
-        botonContacto.addEventListener('click', function(e) {
+      const botonesContacto = document.querySelectorAll('.boton-contacto');
+      botonesContacto.forEach(boton => {
+        boton.addEventListener('click', function(e) {
           e.preventDefault();
-          // Desplazar a la sección de contacto
-          document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+          // Cambiar a la página de inicio y desplazar a contacto
+          enlacesNav.forEach(el => el.classList.remove('activo'));
+          document.querySelector('.nav-link[data-pagina="inicio"]').classList.add('activo');
+          mostrarPagina('inicio');
+          setTimeout(() => {
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+          }, 100);
         });
-      }
+      });
     });
   </script>
 
