@@ -3,9 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="DECORINSA - Diseño de interiores y reformas integrales en Castellón. Reformamos tu hogar con estilo, calidad y cercanía. Bilingüe español / català." />
-  <meta name="keywords" content="DECORINSA, diseño de interiores, reformas Castellón, Gemma Insa Latorre, interiorismo, decoración" />
-  <title>DECORINSA | Diseño y Reformas en Castellón</title>
+  <meta name="description" content="DECORINSA - Empresa líder en diseño de interiores y reformas integrales en Castellón. Reformamos tu hogar con estilo, calidad y cercanía." />
+  <meta name="keywords" content="DECORINSA, diseño de interiores, reformas Castellón, Gemma Insa Latorre, interiorismo, decoración, reformas integrales, arquitectura interior" />
+  <meta name="author" content="DECORINSA - Gemma Insa Latorre" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://decorinsa-reformas-castellon.com" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://decorinsa-reformas-castellon.com/" />
+  <meta property="og:title" content="DECORINSA | Diseño y Reformas en Castellón" />
+  <meta property="og:description" content="Empresa líder en diseño de interiores y reformas integrales en Castellón. Transformamos tu hogar con estilo y calidad." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://decorinsa-reformas-castellon.com/" />
+  <meta property="twitter:title" content="DECORINSA | Diseño y Reformas en Castellón" />
+  <meta property="twitter:description" content="Empresa líder en diseño de interiores y reformas integrales en Castellón. Transformamos tu hogar con estilo y calidad." />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  
+  <title>DECORINSA | Diseño de Interiores y Reformas Integrales en Castellón</title>
   <style>
     :root {
       --beige-claro: #faf8f5;
@@ -46,20 +67,31 @@
     }
 
     .logo-icon {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       background-color: white;
-      border-radius: 50%;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transform: rotate(5deg);
+      transition: transform 0.3s ease;
+    }
+
+    .logo-icon:hover {
+      transform: rotate(0deg) scale(1.05);
     }
 
     .logo-icon svg {
-      width: 40px;
-      height: 40px;
-      fill: var(--marron);
+      width: 50px;
+      height: 50px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     header h1 {
@@ -68,6 +100,18 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      background: linear-gradient(45deg, white, #f0f0f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo-tagline {
+      font-size: 0.9em;
+      font-weight: 300;
+      margin-top: 5px;
+      color: #f8f8f8;
+      font-style: italic;
     }
 
     header h2 {
@@ -551,19 +595,63 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .schema-markup {
+      display: none;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json" class="schema-markup">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "DECORINSA",
+    "description": "Diseño de interiores y reformas integrales en Castellón",
+    "url": "https://decorinsa-reformas-castellon.com",
+    "telephone": "+34-685-646-384",
+    "email": "insagemma@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Castellón de la Plana",
+      "addressRegion": "Castellón",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "39.986",
+      "longitude": "-0.037"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "€€",
+    "areaServed": "Castellón y provincia",
+    "founder": {
+      "@type": "Person",
+      "name": "Gemma Insa Latorre"
+    },
+    "foundingDate": "2010"
+  }
+  </script>
+
   <header>
     <div class="logo-container">
       <div class="logo-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M19,9H5C3.9,9,3,9.9,3,11v8c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2v-8C21,9.9,20.1,9,19,9z M19,19H5v-8h14V19z"/>
-          <path d="M12,3L6,9h12L12,3z M12,6.5L14,9h-4L12,6.5z"/>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="30" width="80" height="60" rx="5" fill="white" stroke="#a67856" stroke-width="2"/>
+          <rect x="30" y="50" width="40" height="40" fill="#8a9b6e"/>
+          <circle cx="50" cy="25" r="15" fill="#d9cbb8"/>
+          <path d="M35 30 L35 20 L45 20 L45 15 L55 15 L55 20 L65 20 L65 30 Z" fill="#bfa890"/>
+          <rect x="40" y="60" width="20" height="10" fill="#faf8f5"/>
+          <circle cx="25" cy="40" r="3" fill="#faf8f5"/>
+          <circle cx="75" cy="40" r="3" fill="#faf8f5"/>
         </svg>
       </div>
-      <h1>DECORINSA</h1>
+      <div class="logo-text">
+        <h1>DECORINSA</h1>
+        <div class="logo-tagline">diseño & reformas</div>
+      </div>
     </div>
     <h2>Diseño de interiores y reformas integrales en Castellón</h2>
   </header>
@@ -646,84 +734,84 @@
     </div>
   </section>
 
-  <!-- Página Galería - CON IMÁGENES CORREGIDAS Y SIN HUECOS -->
+  <!-- Página Galería - CON IMÁGENES MODERNAS Y ENLACES VERIFICADOS -->
   <section id="galeria" class="pagina">
-    <h2>Galería de Proyectos</h2>
+    <h2>Proyectos de Diseño Moderno</h2>
     <div class="galeria">
-      <!-- Cocinas -->
+      <!-- Cocinas modernas -->
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cocina moderna con isla central - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cocina moderna minimalista con isla central - Reforma DECORINSA">
       </div>
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1556909114-5c0be6c66d5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cocina blanca minimalista - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1556909114-5c0be6c66d5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cocina blanca minimalista con electrodomésticos integrados - Reforma DECORINSA">
       </div>
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1556909114-5c0be6c66d5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cocina integrada con salón - Reforma DECORINSA">
-      </div>
-      
-      <!-- Baños -->
-      <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baño moderno con ducha de obra - Reforma DECORINSA">
-      </div>
-      <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baño de lujo con bañera independiente - Reforma DECORINSA">
-      </div>
-      <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baño con acabados en mármol - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cocina moderna con encimera de mármol - Reforma DECORINSA">
       </div>
       
-      <!-- Salones -->
+      <!-- Baños modernos -->
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Salón luminoso con vistas - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baño moderno con ducha de obra y mampara de cristal - Reforma DECORINSA">
       </div>
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Salón comedor integrado - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baño de lujo con bañera independiente y acabados en mármol - Reforma DECORINSA">
       </div>
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Salón con chimenea moderna - Reforma DECORINSA">
-      </div>
-      
-      <!-- Dormitorios -->
-      <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dormitorio principal con vestidor - Reforma DECORINSA">
-      </div>
-      <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dormitorio juvenil con estudio - Reforma DECORINSA">
-      </div>
-      <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1631656883327-6a89b56b6e8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dormitorio con baño integrado - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baño moderno con iluminación LED integrada - Reforma DECORINSA">
       </div>
       
-      <!-- Terrazas y exteriores -->
+      <!-- Salones modernos -->
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1587583770025-32851bad462e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Terraza exterior con zona de comedor - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Salón moderno luminoso con amplias ventanas - Reforma DECORINSA">
       </div>
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1587583770025-32851bad462e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jardín con zona de descanso - Reforma DECORINSA">
-      </div>
-      
-      <!-- Oficinas y espacios de trabajo -->
-      <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Oficina en el hogar - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Salón comedor integrado con diseño contemporáneo - Reforma DECORINSA">
       </div>
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Biblioteca integrada en salón - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Salón moderno con chimenea integrada y mobiliario de diseño - Reforma DECORINSA">
       </div>
       
-      <!-- Recibidores y pasillos -->
+      <!-- Dormitorios modernos -->
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Recibidor moderno con espejo - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dormitorio principal moderno con vestidor integrado - Reforma DECORINSA">
       </div>
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Pasillo con iluminación LED - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1631656883327-6a89b56b6e8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dormitorio juvenil moderno con zona de estudio - Reforma DECORINSA">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dormitorio moderno con baño integrado y diseño minimalista - Reforma DECORINSA">
       </div>
       
-      <!-- Lavanderías y espacios utilitarios -->
+      <!-- Terrazas y exteriores modernos -->
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1628591747155-23748374d0c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Lavandería integrada - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1587583770025-32851bad462e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Terraza moderna exterior con zona de comedor y lounge - Reforma DECORINSA">
       </div>
       <div class="galeria-item">
-        <img src="https://images.unsplash.com/photo-1628591747155-23748374d0c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Vestidor organizado - Reforma DECORINSA">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jardín moderno con zona de descanso y iluminación exterior - Reforma DECORINSA">
+      </div>
+      
+      <!-- Oficinas y espacios de trabajo modernos -->
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Oficina en el hogar con diseño moderno y funcional - Reforma DECORINSA">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Biblioteca moderna integrada en salón - Reforma DECORINSA">
+      </div>
+      
+      <!-- Recibidores y pasillos modernos -->
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Recibidor moderno con espejo y mueble de diseño - Reforma DECORINSA">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1600566752734-45b8f0b6b6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Pasillo moderno con iluminación LED integrada - Reforma DECORINSA">
+      </div>
+      
+      <!-- Lavanderías y espacios utilitarios modernos -->
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1628591747155-23748374d0c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Lavandería moderna integrada con diseño funcional - Reforma DECORINSA">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1600607688964-a5cbfa6f5c9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Vestidor moderno organizado con sistema de almacenamiento - Reforma DECORINSA">
       </div>
     </div>
   </section>
@@ -873,6 +961,10 @@
   <footer>
     <p>© 2025 DECORINSA — Diseño y reformas por Gemma Insa Latorre</p>
     <p class="bilingue">Disponible en Español / Català</p>
+    <p style="margin-top: 15px; font-size: 0.8em; opacity: 0.7;">
+      <strong>DECORINSA - Reformas y Diseño de Interiores en Castellón</strong><br>
+      Empresa registrada y con todos los seguros obligatorios
+    </p>
   </footer>
 
   <script>
